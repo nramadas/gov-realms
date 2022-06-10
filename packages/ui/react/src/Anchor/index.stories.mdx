@@ -1,0 +1,41 @@
+import { Meta } from '@storybook/addon-docs';
+import * as Anchor from './index';
+
+<Meta title="controls/Anchor" />
+
+<style>
+  {`
+    .container {
+      align-items: center;
+      display: grid;
+      grid-template-columns: max-content max-content;
+      gap: 2rem;
+      margin-top: 4rem;
+    }
+  `}
+</style>
+
+# controls/Anchors
+
+<div className="container">
+  Gradient
+  <div>
+    <Anchor.Gradient>Gradient</Anchor.Gradient>
+  </div>
+  Dark
+  <div>
+    <Anchor.Dark>Dark</Anchor.Dark>
+  </div>
+  Primary
+  <div>
+    <Anchor.Primary>Primary</Anchor.Primary>
+  </div>
+  Secondary
+  <div>
+    <Anchor.Secondary>Secondary</Anchor.Secondary>
+  </div>
+  Tertiary
+  <div>
+    <Anchor.Tertiary>Tertiary</Anchor.Tertiary>
+  </div>
+</div>

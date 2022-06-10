@@ -1,6 +1,7 @@
 {
   "extends": "../../../tsconfig.json",
   "include": ["src"],
+  "exclude": [".storybook"],
   "compilerOptions": {
     "outDir": "lib/esm",
     "declarationDir": "lib/types",

@@ -28,7 +28,9 @@
   "scripts": {
     "clean": "shx rm -rf lib/*",
     "build": "yarn clean && tsc -p tsconfig.json && tsc-esm -p tsconfig.json && tsc -p tsconfig.cjs.json && tailwindcss -c ./tailwind.config.cjs -i ./base.css -o ./styles.css",
-    "postbuild": "echo '{\"type\":\"commonjs\"}' | npx json > lib/cjs/package.json && echo '{\"type\":\"module\"} ' | npx json > lib/esm/package.json"
+    "postbuild": "echo '{\"type\":\"commonjs\"}' | npx json > lib/cjs/package.json && echo '{\"type\":\"module\"} ' | npx json > lib/esm/package.json",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "peerDependencies": {
     "react": "^17.0.0",
@@ -36,9 +38,19 @@
   },
   "dependencies": {},
   "devDependencies": {
+    "@babel/core": "^7.18.2",
+    "@storybook/addon-actions": "^6.5.8",
+    "@storybook/addon-essentials": "^6.5.8",
+    "@storybook/addon-interactions": "^6.5.8",
+    "@storybook/addon-links": "^6.5.8",
+    "@storybook/builder-webpack4": "^6.5.8",
+    "@storybook/manager-webpack4": "^6.5.8",
+    "@storybook/react": "^6.5.8",
+    "@storybook/testing-library": "^0.0.12",
     "@types/react": "^17.0.40",
     "@types/react-dom": "^17.0.0",
     "@types/tailwindcss": "^3.0.10",
+    "babel-loader": "^8.2.5",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
     "tailwind-merge": "^1.2.1",

@@ -1,6 +1,11 @@
 {
   "include": ["packages/*/*/src"],
-  "exclude": ["node_modules", "packages/*/*/node_modules"],
+  "exclude": [
+    "node_modules",
+    "packages/*/*/node_modules",
+    "./node_modules",
+    "./node_modules/*"
+  ],
   "compilerOptions": {
     "target": "es2019",
     "module": "esnext",
@@ -15,7 +20,7 @@
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "typeRoots": ["node_modules/@types"]
+    "typeRoots": []
   },
   "typedocOptions": {
     "entryPoints": ".",

@@ -42,7 +42,7 @@ html {
   -o-tab-size: 4;
      tab-size: 4;
   /* 3 */
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: Ambit, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   /* 4 */
 }
 
@@ -417,6 +417,15 @@ video {
   height: auto;
 }
 
+h1, 
+  h2, 
+  h3, 
+  h4, 
+  h5, 
+  h6 {
+  font-family: p22-mackinac-pro, ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
 *, ::before, ::after {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -566,6 +575,14 @@ video {
   display: flex;
 }
 
+.rui-inline-flex {
+  display: inline-flex;
+}
+
+.rui-cursor-pointer {
+  cursor: pointer;
+}
+
 .rui-items-center {
   align-items: center;
 }
@@ -576,6 +593,10 @@ video {
 
 .rui-rounded-full {
   border-radius: 9999px;
+}
+
+.rui-border-2 {
+  border-width: 2px;
 }
 
 .rui-border {
@@ -590,12 +611,12 @@ video {
   border-style: none;
 }
 
-.rui-border-white\/30 {
-  border-color: rgb(255 255 255 / 0.3);
-}
-
 .rui-border-transparent {
   border-color: transparent;
+}
+
+.rui-border-white\/30 {
+  border-color: rgb(255 255 255 / 0.3);
 }
 
 .rui-bg-black {
@@ -638,7 +659,7 @@ video {
 }
 
 .rui-font-serif {
-  font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  font-family: p22-mackinac-pro, ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
 }
 
 .rui-text-base {
@@ -660,6 +681,10 @@ video {
   opacity: .84;
 }
 
+.rui-outline-0 {
+  outline-width: 0px;
+}
+
 .rui-transition-all {
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -676,10 +701,6 @@ video {
 
 .rui-duration-300 {
   transition-duration: 300ms;
-}
-
-.hover\:rui-cursor-pointer:hover {
-  cursor: pointer;
 }
 
 .hover\:rui-bg-white:hover {
@@ -704,22 +725,24 @@ video {
   opacity: .70;
 }
 
+.focus\:rui-border-\[\#00C2FF\]:focus {
+  --tw-border-opacity: 1;
+  border-color: rgb(0 194 255 / var(--tw-border-opacity));
+}
+
+.focus\:rui-border-white:focus {
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity));
+}
+
 .focus\:rui-bg-white:focus {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.focus\:rui-bg-white\/70:focus {
-  background-color: rgb(255 255 255 / 0.7);
-}
-
 .focus\:rui-text-black:focus {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
-}
-
-.focus\:rui-opacity-100:focus {
-  opacity: 1;
 }
 
 .focus\:rui-opacity-\[\.70\]:focus {
@@ -747,13 +770,63 @@ video {
   opacity: 0.5;
 }
 
-.disabled\:rui-bg-white\/40:disabled {
-  background-color: rgb(255 255 255 / 0.4);
+.disabled\:rui-cursor-not-allowed:disabled {
+  cursor: not-allowed;
+}
+
+.disabled\:rui-border-transparent:disabled {
+  border-color: transparent;
+}
+
+.disabled\:rui-bg-white\/10:disabled {
+  background-color: rgb(255 255 255 / 0.1);
 }
 
 .disabled\:rui-text-black:disabled {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
+.disabled\:rui-opacity-30:disabled {
+  opacity: 0.3;
+}
+
+.disabled\:hover\:rui-bg-white\/10:hover:disabled {
+  background-color: rgb(255 255 255 / 0.1);
+}
+
+.disabled\:hover\:rui-text-black:hover:disabled {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
+.disabled\:hover\:rui-opacity-30:hover:disabled {
+  opacity: 0.3;
+}
+
+.disabled\:focus\:rui-border-transparent:focus:disabled {
+  border-color: transparent;
+}
+
+.disabled\:focus\:rui-opacity-30:focus:disabled {
+  opacity: 0.3;
+}
+
+.disabled\:active\:rui-bg-white\/10:active:disabled {
+  background-color: rgb(255 255 255 / 0.1);
+}
+
+.disabled\:active\:rui-bg-transparent:active:disabled {
+  background-color: transparent;
+}
+
+.disabled\:active\:rui-text-white:active:disabled {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.disabled\:active\:rui-opacity-30:active:disabled {
+  opacity: 0.3;
 }
 
 .rui-group:hover .group-hover\:rui-border-white\/70 {
@@ -763,3 +836,16 @@ video {
 .rui-group:focus .group-focus\:rui-border-white\/70 {
   border-color: rgb(255 255 255 / 0.7);
 }
+
+.rui-group:disabled:hover .group-disabled\:group-hover\:rui-border-transparent {
+  border-color: transparent;
+}
+
+.rui-group:disabled:focus .group-disabled\:group-focus\:rui-border-transparent {
+  border-color: transparent;
+}
+
+.\[\&\.disabled\]\:rui-cursor-not-allowed.rui-disabled {
+  cursor: not-allowed;
+}
+
