@@ -1,0 +1,47 @@
+{
+  "name": "@solana/realms-ui-react",
+  "version": "0.0.1",
+  "author": "Solana Maintainers <maintainers@solana.foundation>",
+  "repository": "",
+  "license": "Apache-2.0",
+  "type": "module",
+  "sideEffects": false,
+  "main": "lib/cjs/index.js",
+  "module": "lib/esm/index.mjs",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./lib/esm/index.mjs",
+      "require": "./lib/cjs/index.js"
+    },
+    "./styles.css": "./styles.css"
+  },
+  "files": [
+    "lib",
+    "src",
+    "LICENSE",
+    "styles.css"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "clean": "shx rm -rf lib/*",
+    "build": "yarn clean && tsc -p tsconfig.json && tsc-esm -p tsconfig.json && tsc -p tsconfig.cjs.json && tailwindcss -c ./tailwind.config.cjs -i ./base.css -o ./styles.css",
+    "postbuild": "echo '{\"type\":\"commonjs\"}' | npx json > lib/cjs/package.json && echo '{\"type\":\"module\"} ' | npx json > lib/esm/package.json"
+  },
+  "peerDependencies": {
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/react": "^17.0.40",
+    "@types/react-dom": "^17.0.0",
+    "@types/tailwindcss": "^3.0.10",
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0",
+    "tailwind-merge": "^1.2.1",
+    "tailwindcss": "^3.1.2"
+  }
+}
